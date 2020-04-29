@@ -5,12 +5,19 @@ public class Trainer {
     
     private ArrayList<Pokemon> bag;
     private Scanner sc;
-    public Trainer(){
+    private String name;
+
+    public Trainer(String name){
         bag = new ArrayList<Pokemon>();
         bag.add(new Pikachu("Pikachu of satochi"));
         sc = new Scanner(System.in);
+
+        this.name = name;
     }
 
+    public String getName(){
+        return this.name;
+    }
     public void play(){
             String cmd = "";
 
@@ -43,7 +50,7 @@ public class Trainer {
             sc.nextLine();
             return;
         }
-        
+
         Pokemon wildPokemon = pokemons.get(no);
 
         System.out.println("\n\npokemon in bag: ");
@@ -90,6 +97,10 @@ public class Trainer {
             System.out.println(" " + number + " " + p + "HP : " + p.getHp() );
             number++;
         }  
-    }    
+    } 
+    
+    public ArrayList<Pokemon> getBag(){
+        return bag;
+    } 
     
 }
