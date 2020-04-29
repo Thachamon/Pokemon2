@@ -7,8 +7,16 @@ public abstract class Pokemon{
         this.hp = 0;
     }
 
+    public Pokemon(String name, int maxHp){
+        this.name = name;
+        this.hp = (int)(Math.random() * maxHp);
+    }
     public String getName(){
         return name;
+    }
+
+    public int getHp(){
+        return hp;
     }
 
     public boolean damage(int value){
